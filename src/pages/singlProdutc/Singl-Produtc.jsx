@@ -5,12 +5,19 @@ import img from "../../assets/images/imgs.png";
 import img1 from "../../assets/images/imgs1.png";
 import { useGetSingleCategoryQuery } from "../../redux/api/categoreyApi";
 import { IoCartOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const SinglProdutc = () => {
   const { id } = useParams();
   const { data } = useGetSingleCategoryQuery(id);
   console.log(data);
-
+  const [count, setCount] = useState(1);
+  const increment = () => setCount(count + 1);
+  const decrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
   return (
     <>
       <div className="container my-3 w-full flex items-center mt-6 mb-7">
@@ -24,7 +31,7 @@ const SinglProdutc = () => {
       <div className="container grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 mb-10 px-1">
         <div>
           <img
-            className="w-[400px] rounded-[20px] h-[500px] mb-4 object-contain border bg-[#fff]"
+            className="w-[450px] rounded-[20px] h-[500px] mb-4 object-contain border bg-[#fff]"
             src={data?.image_url}
             alt=""
           />
@@ -77,9 +84,13 @@ const SinglProdutc = () => {
           <hr />
           <div className="flex justify-between mb-6">
             <div className="flex items-center justify-between rounded-full bg-[#F0F0F0] px-[10px] py-[4px] w-[40%] lg:w-[35%]">
-              <button className="text-[22px]">-</button>
-              <p className="text-[18px]"></p>
-              <button className="text-[22px]">+</button>
+              <button onClick={decrement} className="text-[22px]">
+                -
+              </button>
+              <p className="text-[18px]">{count}</p>
+              <button onClick={increment} className="text-[22px]">
+                +
+              </button>
             </div>
             <div className="w-[150px]">
               <p className="text-[14px]">

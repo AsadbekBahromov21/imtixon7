@@ -15,7 +15,7 @@ const Footer = () => {
               src={img}
               alt=""
             />
-            <p className="lg:text-[20px] md:text-[19px] sm:text-[18px] text-[#EBE2F4] w-[200px]  leading-7">
+            <p className="lg:text-[20px] md:text-[19px] sm:text-[18px] text-[#EBE2F4] w-[200px]  leading-7 txt-linear">
               START YOUR GAME WITH THE BEST
             </p>
           </div>

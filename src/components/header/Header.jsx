@@ -34,7 +34,6 @@ const Header = () => {
               className={`nav__collect flex  gap-3 ${isMenuOpen ? "show" : ""}`}
             >
               <div className="flex items-center gap-[40px] navbar navbar__collection">
-                {/* <BasicModal ooo="Add" /> */}
                 <NavLink
                   className={"text-[16px] font-[500] text-[#0D2612]  "}
                   to={"/products"}
@@ -61,7 +60,7 @@ const Header = () => {
                 </NavLink>
               </div>
             </div>
-            <div className="flex gap-5 items-center ">
+            <div className="flex gap-2 lg:gap-5 items-center ">
               <IoSearchOutline className="text-[18px]" />
               <AiOutlineUser className="text-[#000] text-[18px]" />
               <Link to={"/cartProducts"}>

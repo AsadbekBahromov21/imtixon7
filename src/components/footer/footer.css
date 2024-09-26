@@ -18,3 +18,10 @@
         display: none;
     }
 }
+
+.txt-linear {
+    background: linear-gradient(90deg, #EBE2F4 0%, #14FF00 100%);
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

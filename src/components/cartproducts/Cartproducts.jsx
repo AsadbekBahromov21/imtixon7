@@ -92,7 +92,7 @@ const Cartproducts = ({ data }) => {
             })}
           </div>
           <div className="border mb-[40px]  ml-6 mr-6 "></div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mb-[40px]">
             <h2 className="text-[20px] font-[700] lg:text-[26px] border-b border-dashed pb-2">
               CART TOTALS
             </h2>

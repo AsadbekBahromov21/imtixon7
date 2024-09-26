@@ -6,7 +6,12 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { GiShoppingCart } from "react-icons/gi";
 import { RiMenu2Fill } from "react-icons/ri";
 import navbar from "../../assets/images/navbar.png";
+import { useSelector } from "react-redux";
+
 const Header = () => {
+  const cart = useSelector((state) => state.cart.value);
+  console.log(cart);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -62,6 +67,7 @@ const Header = () => {
               <Link to={"/cartProducts"}>
                 <GiShoppingCart className="text-[#000] text-[18px]" />
               </Link>
+              <sup className="">{cart.length}</sup>
             </div>
             <div onClick={toggleMenu} className="navbar__menu">
               <RiMenu2Fill />
